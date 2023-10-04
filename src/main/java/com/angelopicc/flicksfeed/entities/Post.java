@@ -7,7 +7,7 @@ import com.angelopicc.flicksfeed.entities.enums.Rating;
 
 import jakarta.persistence.Entity;
 
-@Entity
+// @Entity
 public class Post {
     
     private long id;

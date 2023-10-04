@@ -4,7 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 
-@Entity
+// @Entity
 public class Conversation {
 
     private long id;

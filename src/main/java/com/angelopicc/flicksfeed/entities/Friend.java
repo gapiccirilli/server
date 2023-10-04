@@ -2,7 +2,7 @@ package com.angelopicc.flicksfeed.entities;
 
 import jakarta.persistence.Entity;
 
-@Entity
+// @Entity
 public class Friend {
     private long id;
     private User user;

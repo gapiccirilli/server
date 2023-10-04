@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FlicksfeedApplication<flicksfeed>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.angelopicc.flicksfeed.FlicksfeedApplication",
+            "projectName": "flicksfeed",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

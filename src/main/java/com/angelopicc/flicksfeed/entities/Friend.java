@@ -1,20 +1,27 @@
 package com.angelopicc.flicksfeed.entities;
 
-import jakarta.persistence.Entity;
+import java.time.LocalDateTime;
 
 // @Entity
 public class Friend {
     private long id;
-    private User user;
-    private long friendUserId;
+    private User sender;
+    private User receiver;
+    private LocalDateTime requestSent;
+    private LocalDateTime requestAccepted;
+    private LocalDateTime requestDenied;
     
     public Friend() {
     }
 
-    public Friend(long id, User user, long friendUserId) {
+    public Friend(long id, User sender, User receiver, LocalDateTime requestSent, LocalDateTime requestAccepted,
+            LocalDateTime requestDenied) {
         this.id = id;
-        this.user = user;
-        this.friendUserId = friendUserId;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.requestSent = requestSent;
+        this.requestAccepted = requestAccepted;
+        this.requestDenied = requestDenied;
     }
 
     public long getId() {
@@ -25,24 +32,49 @@ public class Friend {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public User getSender() {
+        return sender;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setSender(User sender) {
+        this.sender = sender;
     }
 
-    public long getFriendUserId() {
-        return friendUserId;
+    public User getReceiver() {
+        return receiver;
     }
 
-    public void setFriendUserId(long friendUserId) {
-        this.friendUserId = friendUserId;
+    public void setReceiver(User receiver) {
+        this.receiver = receiver;
+    }
+
+    public LocalDateTime getRequestSent() {
+        return requestSent;
+    }
+
+    public void setRequestSent(LocalDateTime requestSent) {
+        this.requestSent = requestSent;
+    }
+
+    public LocalDateTime getRequestAccepted() {
+        return requestAccepted;
+    }
+
+    public void setRequestAccepted(LocalDateTime requestAccepted) {
+        this.requestAccepted = requestAccepted;
+    }
+
+    public LocalDateTime getRequestDenied() {
+        return requestDenied;
+    }
+
+    public void setRequestDenied(LocalDateTime requestDenied) {
+        this.requestDenied = requestDenied;
     }
 
     @Override
     public String toString() {
-        return "Friend [id=" + id + ", user=" + user + ", friendUserId=" + friendUserId + "]";
+        return "Friend [id=" + id + ", sender=" + sender + ", receiver=" + receiver + ", requestSent=" + requestSent
+                + ", requestAccepted=" + requestAccepted + ", requestDenied=" + requestDenied + "]";
     }
 }

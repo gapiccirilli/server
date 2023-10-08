@@ -12,4 +12,6 @@ public class User {
     private String password;
     private String profileImage;
     private List<Friend> friends;
+    private List<Friend> sentRequests;
+    private List<Friend> receivedRequests;
 }

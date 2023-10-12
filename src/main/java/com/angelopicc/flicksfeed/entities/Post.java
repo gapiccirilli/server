@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.angelopicc.flicksfeed.entities.enums.Rating;
 
-import jakarta.persistence.Entity;
-
 // @Entity
 public class Post {
     

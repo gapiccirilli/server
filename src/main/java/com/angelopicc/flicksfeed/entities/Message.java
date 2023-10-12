@@ -1,7 +1,5 @@
 package com.angelopicc.flicksfeed.entities;
 
-import jakarta.persistence.Entity;
-
 // @Entity
 public class Message {
 

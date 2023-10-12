@@ -2,8 +2,6 @@ package com.angelopicc.flicksfeed.entities;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-
 // @Entity
 public class Conversation {
 

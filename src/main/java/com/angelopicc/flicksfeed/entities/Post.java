@@ -7,10 +7,16 @@ import org.springframework.data.annotation.Id;
 
 import com.angelopicc.flicksfeed.entities.enums.Rating;
 
-// @Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Post {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String genre;
@@ -22,8 +28,14 @@ public class Post {
     private Rating rating;
     private String content;
     private String image;
+
+    @OneToMany(mappedBy = "post")
     private List<Conversation> conversations;
+
+    @OneToMany(mappedBy = "post")
     private List<Comment> comments;
+
+    @OneToMany(mappedBy = "post")
     private List<Like> likes;
 
     public Post() {

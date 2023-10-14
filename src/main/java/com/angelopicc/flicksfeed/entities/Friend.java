@@ -4,11 +4,21 @@ import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 
-// @Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Friend {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User sender;
     private User receiver;
     private LocalDateTime requestSent;

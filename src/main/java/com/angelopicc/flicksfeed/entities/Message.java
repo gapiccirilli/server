@@ -2,12 +2,22 @@ package com.angelopicc.flicksfeed.entities;
 
 import org.springframework.data.annotation.Id;
 
-// @Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Message {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String message;
+
+    @ManyToOne
+    @JoinColumn(name = "conversation_id")
     private Conversation conversation;
 
     public Message() {

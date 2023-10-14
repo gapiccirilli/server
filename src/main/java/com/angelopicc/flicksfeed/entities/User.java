@@ -4,17 +4,29 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-// @Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String username;
     private String email;
     private String password;
     private String profileImage;
+
+    @OneToMany(mappedBy = "sender")
     private List<Friend> friends;
+
+    @OneToMany(mappedBy = "sender")
     private List<Friend> sentRequests;
+
+    @OneToMany(mappedBy = "sender")
     private List<Friend> receivedRequests;
     
     public User() {

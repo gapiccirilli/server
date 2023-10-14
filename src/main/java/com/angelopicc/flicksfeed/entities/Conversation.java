@@ -4,12 +4,25 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-// @Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Conversation {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @OneToMany(mappedBy = "conversation")
     private List<Message> messages;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id")
     private Post post;
     
     public Conversation() {

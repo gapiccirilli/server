@@ -2,9 +2,12 @@ package com.angelopicc.flicksfeed.entities;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+
 // @Entity
 public class Conversation {
 
+    @Id
     private long id;
     private List<Message> messages;
     private Post post;

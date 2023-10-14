@@ -3,11 +3,14 @@ package com.angelopicc.flicksfeed.entities;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+
 import com.angelopicc.flicksfeed.entities.enums.Rating;
 
 // @Entity
 public class Post {
     
+    @Id
     private long id;
     private String title;
     private String genre;

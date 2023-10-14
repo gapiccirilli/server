@@ -1,8 +1,11 @@
 package com.angelopicc.flicksfeed.entities;
 
+import org.springframework.data.annotation.Id;
+
 // @Entity
 public class Message {
 
+    @Id
     private long id;
     private String message;
     private Conversation conversation;

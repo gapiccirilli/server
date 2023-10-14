@@ -2,8 +2,12 @@ package com.angelopicc.flicksfeed.entities;
 
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+
 // @Entity
 public class User {
+
+    @Id
     private long id;
     private String username;
     private String email;

@@ -2,8 +2,12 @@ package com.angelopicc.flicksfeed.entities;
 
 import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.Id;
+
 // @Entity
 public class Friend {
+
+    @Id
     private long id;
     private User sender;
     private User receiver;

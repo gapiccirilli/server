@@ -1,8 +1,11 @@
 package com.angelopicc.flicksfeed.entities;
 
+import org.springframework.data.annotation.Id;
+
 // @Entity
 public class Like {
     
+    @Id
     private long id;
     private long userId;
     private Post post;

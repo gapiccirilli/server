@@ -2,14 +2,17 @@ package com.angelopicc.flicksfeed.entities;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -23,10 +26,10 @@ public class User {
     @OneToMany(mappedBy = "sender")
     private List<Friend> friends;
 
-    @OneToMany(mappedBy = "sender")
+    @Transient
     private List<Friend> sentRequests;
 
-    @OneToMany(mappedBy = "sender")
+    @Transient
     private List<Friend> receivedRequests;
     
     public User() {

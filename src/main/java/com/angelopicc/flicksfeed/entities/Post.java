@@ -3,8 +3,6 @@ package com.angelopicc.flicksfeed.entities;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.angelopicc.flicksfeed.entities.enums.Rating;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,7 +26,7 @@ public class Post {
     private LocalDate released;
     private byte rottenScore;
     private byte imdbScore;
-    private Rating rating;
+    private byte rating;
     private String content;
     private String image;
 
@@ -50,7 +48,7 @@ public class Post {
     }
 
     public Post(long id, String title, String genre, String director, String rated, LocalDate released,
-            byte rottenScore, byte imdbScore, Rating rating, String content, String image,
+            byte rottenScore, byte imdbScore, byte rating, String content, String image,
             List<Conversation> conversations, List<Comment> comments, List<Like> likes) {
         this.id = id;
         this.title = title;
@@ -133,11 +131,11 @@ public class Post {
         this.imdbScore = imdbScore;
     }
 
-    public Rating getRating() {
+    public byte getRating() {
         return rating;
     }
 
-    public void setRating(Rating rating) {
+    public void setRating(byte rating) {
         this.rating = rating;
     }
 
@@ -179,6 +177,14 @@ public class Post {
 
     public void setLikes(List<Like> likes) {
         this.likes = likes;
+    }
+    
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

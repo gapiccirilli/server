@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestGround",
+            "request": "launch",
+            "mainClass": "com.angelopicc.flicksfeed.utils.TestGround",
+            "projectName": "flicksfeed"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-FlicksfeedApplication<flicksfeed>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

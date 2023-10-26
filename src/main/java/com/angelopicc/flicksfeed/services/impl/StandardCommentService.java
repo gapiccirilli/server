@@ -1,7 +1,6 @@
 package com.angelopicc.flicksfeed.services.impl;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -67,9 +66,13 @@ public class StandardCommentService implements CommentService {
 
     @Override
     public void deleteComment(long commentId) {
-        Comment comment = commentRepository.findById(commentId)
-            .orElseThrow(() -> new CommentNotFoundException("Comment with id: " + commentId + " can't be found"));
-        commentRepository.delete(comment);
+        boolean commentExists = commentRepository.existsById(commentId);
+
+        if (commentExists) {
+            commentRepository.deleteById(commentId);
+        } else {
+            throw new CommentNotFoundException("Comment with id: " + commentId + " can't be found");
+        }
     }
 
     // --------------------------------------------------------------------

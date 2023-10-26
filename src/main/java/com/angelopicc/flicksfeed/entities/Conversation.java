@@ -1,5 +1,6 @@
 package com.angelopicc.flicksfeed.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -20,7 +21,7 @@ public class Conversation {
     private long id;
 
     @OneToMany(mappedBy = "conversation")
-    private List<Message> messages;
+    private List<Message> messages = new ArrayList<>(10);
 
     @ManyToOne
     @JoinColumn(name = "post_id")

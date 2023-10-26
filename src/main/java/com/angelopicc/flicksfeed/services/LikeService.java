@@ -6,7 +6,7 @@ import com.angelopicc.flicksfeed.payload.LikeDto;
 
 public interface LikeService {
     
-    void like(long userId, long postId);
-    void unlike(long userId, long postId);
+    void like(LikeDto like);
+    void unlike(long likeId);
     List<LikeDto> getAllLikes(long postId);
 }
